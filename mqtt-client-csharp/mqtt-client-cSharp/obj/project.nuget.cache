@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HTK1bUcglRjJ7a7b0jQKX17EAt7kuvzgsNryOpbXNUOi4+PzZ0xo0ute5q6wZvRnLQGV8HFAzjYx5J3vRi4QdQ==",
+  "success": true,
+  "projectFilePath": "/Users/jac/Downloads/MQTT-Client-Examples/mqtt-client-csharp/mqtt-client-cSharp/mqtt-client-cSharp.csproj",
+  "expectedPackageFiles": [
+    "/Users/jac/.nuget/packages/mqttnet/3.0.15/mqttnet.3.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
