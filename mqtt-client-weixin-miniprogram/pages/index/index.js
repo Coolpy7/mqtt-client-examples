@@ -1,48 +1,45 @@
-// index.js
-// 获取应用实例
-const app = getApp()
-
+// var Paho = require('../../utils/mqttws31.js')
+// var msgpack = require('../../utils/msgpack.js')
+//index.js
+//获取应用实例
+var app = getApp();
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  // 事件处理函数
-  bindViewTap() {
+  //事件处理函数
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+  toRoom: function () {
+    wx.navigateTo({
+      url: '../room/room'
+    })
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+  onLoad: function () {
+    // console.log('onLoad')
+    var that = this
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              app.globalData.userInfo = res.userInfo
+              that.toRoom()
+            }
+          })
+        }
       }
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  bindGetUserInfo: function (e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.toRoom()
   }
 })

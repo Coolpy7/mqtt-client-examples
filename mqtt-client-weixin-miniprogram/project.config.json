@@ -1,16 +1,13 @@
 {
-  "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
+  "description": "Coolpy7 Chat Demo",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": false,
+    "newFeature": true,
     "coverView": true,
     "nodeModules": false,
     "autoAudits": false,
@@ -39,13 +36,9 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.16.0",
+  "libVersion": "1.9.1",
   "appid": "wx466a7f23c49db078",
-  "projectname": "mqtt-client-weixin-miniprogram",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
+  "projectname": "wxsmallapp",
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -57,12 +50,7 @@
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
-      "list": []
-    },
-    "gamePlugin": {
+      "currentL": -1,
       "list": []
     },
     "miniprogram": {
