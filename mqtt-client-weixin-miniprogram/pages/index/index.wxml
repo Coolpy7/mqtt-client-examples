@@ -1,8 +1,25 @@
-<!--wxml-->
-<!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
-<open-data type="userAvatarUrl"></open-data>
-<open-data type="userNickName"></open-data>
-<!-- 需要使用 button 来授权登录 -->
-<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-<view wx:else>请升级微信版本</view>
-
+<view class="container">
+  <view class="label">连接地址（域名）：</view>
+  <input bindinput="setHost" value="{{ host }}" />
+  <view class="is-flex">
+    <button type="primary" bindtap="connect">{{ conenctBtnText }}</button>
+    <button type="warn" disabled="{{ conenctBtnText === '连接' }}" bindtap="disconnect">断开连接</button>
+  </view>
+  <view class="label">订阅主题：</view>
+  <input bindinput="setSubTopic" value="{{ subTopic }}" />
+  <view class="is-flex">
+    <button type="primary" bindtap="subscribe">订阅</button>
+    <button type="warn" bindtap="unsubscribe">取消订阅</button>
+  </view>
+  <view class="label">发布主题：</view>
+  <input bindinput="setPubTopic" value="{{ pubTopic }}" />
+  <view class="label">发布消息：</view>
+  <input bindinput="setPubMsg" value="{{ pubMsg }}"></input>
+  <view class="is-flex">
+    <button type="primary" bindtap="publish">发布</button>
+  </view>
+  <view class="label">收到的消息：</view>
+  <view class="received-msg-box">
+    <rich-text nodes="{{receivedMsg }}"></rich-text>
+  </view>
+</view>

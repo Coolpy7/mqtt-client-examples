@@ -1,22 +1,36 @@
-/**index.wxss**/
-.userinfo {
+input,
+.received-msg-box {
+  width: 100%;
+  border: 1px solid #d7dae1;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  min-height: 64rpx;
+  margin-bottom: 20rpx;
+}
+
+.received-msg-box {
+  padding: 20rpx;
+  min-height: 300rpx;
+}
+
+.label {
+  font-size: 26rpx;
+  color: #848587;
+  margin-bottom: 12rpx;
+}
+
+.is-flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 44px;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+button[type="primary"],
+button[type="warn"] {
+  width: 40% !important;
+  font-size: 28rpx;
+  font-weight: normal;
+  margin: 0 !important;
 }

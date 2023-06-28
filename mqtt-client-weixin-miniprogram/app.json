@@ -1,14 +1,11 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/room/room"
-  ],
+  "pages": ["pages/index/index", "pages/logs/logs"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Coolpy7 Chat Demo",
+    "navigationBarTitleText": "MQTT Demo",
     "navigationBarTextStyle": "black"
   },
+  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
